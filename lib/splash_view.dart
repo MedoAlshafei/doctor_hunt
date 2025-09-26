@@ -1,5 +1,5 @@
 import 'package:doctor_hunt/core/constants/app_image.dart';
-import 'package:doctor_hunt/features/home/home_view.dart';
+import 'package:doctor_hunt/features/onboarding/presentation/onboarding_view.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatefulWidget {
@@ -16,7 +16,7 @@ class _SplashViewState extends State<SplashView> {
     Future.delayed(Duration(seconds: 2), () {
       Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (e) => HomeView()),
+        MaterialPageRoute(builder: (e) => OnboardingView()),
         (route) => false,
       );
     });
