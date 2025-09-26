@@ -24,7 +24,16 @@ class CustomTheme {
       labelLarge: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
     ),
     inputDecorationTheme: InputDecorationTheme(
-      border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+      contentPadding: const EdgeInsets.symmetric(
+        vertical: 18.0,
+        horizontal: 16.0,
+      ),
+      filled: true,
+      fillColor: const Color(0xFFEFF7F4),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10),
+        // borderSide: BorderSide.none,
+      ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
         borderSide: const BorderSide(color: Color(0xFFDFE2E6)),
