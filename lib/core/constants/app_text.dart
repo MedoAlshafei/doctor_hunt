@@ -1,4 +1,6 @@
 class AppText {
+  static const String appTitle = "Doctor Hunt";
+  static const String skip = "Skip";
   static const String onBoardingOnetitle = "Find Trusted Doctors";
   static const String onBoardingTwotitle = "Choose Best Doctors";
   static const String onBoardingThreetitle = "Easy Appointments";

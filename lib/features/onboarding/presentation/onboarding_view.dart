@@ -1,8 +1,10 @@
+import 'package:doctor_hunt/core/constants/app_colors.dart';
 import 'package:doctor_hunt/core/constants/app_image.dart';
 import 'package:doctor_hunt/core/constants/app_text.dart';
 import 'package:doctor_hunt/features/home/presentation/home_view.dart';
 import 'package:doctor_hunt/features/onboarding/model/custom_page_view_builder.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
@@ -106,7 +108,14 @@ class _OnboardingViewState extends State<OnboardingView> {
                         );
                       }
                     },
-                    child: const Text("Skip"),
+                    child: Text(
+                      AppText.skip,
+                      style: GoogleFonts.rubik(
+                        color: AppColors.grey,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                      ),
+                    ),
                   ),
                 ],
               ),
