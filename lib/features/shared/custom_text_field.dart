@@ -1,5 +1,6 @@
 import 'package:doctor_hunt/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -33,7 +34,12 @@ class CustomTextField extends StatelessWidget {
         decoration: InputDecoration(
           fillColor: Colors.white,
           isDense: true,
-          hintText: hintText,
+          hintText: "$hintText...",
+          hintStyle: GoogleFonts.rubik(
+            color: AppColors.grey,
+            fontSize: 15,
+            fontWeight: FontWeight.w400,
+          ),
           prefixIcon: Icon(prefixIcon, color: AppColors.grey),
           suffixIcon: Icon(suffixIcon, color: AppColors.grey),
           border: OutlineInputBorder(

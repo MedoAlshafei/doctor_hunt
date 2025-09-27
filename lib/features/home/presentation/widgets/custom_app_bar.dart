@@ -1,6 +1,8 @@
 import 'package:doctor_hunt/core/constants/app_colors.dart';
+import 'package:doctor_hunt/core/constants/app_image.dart';
 import 'package:doctor_hunt/core/constants/app_text.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomAppBer extends StatelessWidget {
   const CustomAppBer({super.key});
@@ -12,7 +14,7 @@ class CustomAppBer extends StatelessWidget {
       scrolledUnderElevation: 0,
       backgroundColor: AppColors.primary,
       foregroundColor: Colors.white,
-      centerTitle: true,
+      // centerTitle: true,
       flexibleSpace: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(20.0)),
@@ -26,14 +28,39 @@ class CustomAppBer extends StatelessWidget {
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(bottom: Radius.circular(20.0)),
       ),
-      title: const Text(AppText.home),
+      title: Align(
+        alignment: Alignment.centerLeft,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              AppText.home,
+              style: GoogleFonts.rubik(
+                fontSize: 20,
+                fontWeight: FontWeight.w300,
+              ),
+            ),
+            Text(
+              AppText.findYourDoctor,
+              style: GoogleFonts.rubik(
+                fontSize: 25,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ],
+        ),
+      ),
       actions: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: CircleAvatar(
             radius: 30,
             backgroundColor: Colors.white,
-            child: Icon(Icons.person, color: AppColors.primary, size: 60),
+            child: CircleAvatar(
+              radius: 30,
+              backgroundColor: Colors.white,
+              child: Image.asset(AppImage.profileImage, fit: BoxFit.cover),
+            ),
           ),
         ),
       ],

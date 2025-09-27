@@ -14,14 +14,20 @@ class CustomTheme {
       elevation: 0,
       centerTitle: true,
     ),
-    textTheme: const TextTheme(
-      headlineLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.w700),
-      headlineMedium: TextStyle(fontSize: 28, fontWeight: FontWeight.w600),
-      titleLarge: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
-      titleMedium: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-      bodyLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-      bodyMedium: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
-      labelLarge: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+    textTheme: TextTheme(
+      headlineLarge: GoogleFonts.rubik(
+        fontSize: 32,
+        fontWeight: FontWeight.w700,
+      ),
+      headlineMedium: GoogleFonts.rubik(
+        fontSize: 28,
+        fontWeight: FontWeight.w600,
+      ),
+      titleLarge: GoogleFonts.rubik(fontSize: 22, fontWeight: FontWeight.w600),
+      titleMedium: GoogleFonts.rubik(fontSize: 18, fontWeight: FontWeight.w600),
+      bodyLarge: GoogleFonts.rubik(fontSize: 16, fontWeight: FontWeight.w500),
+      bodyMedium: GoogleFonts.rubik(fontSize: 14, fontWeight: FontWeight.w400),
+      labelLarge: GoogleFonts.rubik(fontSize: 14, fontWeight: FontWeight.w600),
     ),
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: const EdgeInsets.symmetric(

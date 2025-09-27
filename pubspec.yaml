@@ -24,6 +24,7 @@ flutter:
 
   assets:
     - assets/
+    - assets/prison_picture/
     - assets/splash_view/
     - assets/onboarding/
     - assets/app_background/

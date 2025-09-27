@@ -18,6 +18,7 @@ class AppText {
   static const String skip = "Skip";
   static const String next = "Next";
   static const String getStarted = "Get Started";
+  static const String findYourDoctor = "Find Your Doctor";
   static const String onBoardingOnetitle = "Find Trusted Doctors";
   static const String onBoardingTwotitle = "Choose Best Doctors";
   static const String onBoardingThreetitle = "Easy Appointments";
