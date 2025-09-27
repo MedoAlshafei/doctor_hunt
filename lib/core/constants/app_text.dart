@@ -1,5 +1,6 @@
 class AppText {
   static const String appTitle = "Doctor Hunt";
+  // Auth
   static const String login = "Login";
   static const String logout = "Logout";
   static const String register = "Register";
@@ -8,6 +9,8 @@ class AppText {
   static const String confirmPassword = "Confirm Password";
   static const String fullName = "Full Name";
   static const String phoneNumber = "Phone Number";
+
+  // Views
   static const String home = "Home";
   static const String search = "Search";
   static const String notifications = "Notifications";
@@ -15,8 +18,12 @@ class AppText {
   static const String help = "Help";
   static const String about = "About";
   static const String profile = "Profile";
+  //*******//
   static const String skip = "Skip";
   static const String next = "Next";
+
+  // App Text
+  static const String liveDoctors = "Live Doctors";
   static const String getStarted = "Get Started";
   static const String findYourDoctor = "Find Your Doctor";
   static const String onBoardingOnetitle = "Find Trusted Doctors";

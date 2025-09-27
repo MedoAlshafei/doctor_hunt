@@ -1,7 +1,5 @@
-import 'package:doctor_hunt/core/constants/app_text.dart';
 import 'package:doctor_hunt/features/home/presentation/widgets/custom_app_bar.dart';
-import 'package:doctor_hunt/features/home/presentation/widgets/home_app_bar_builder.dart';
-import 'package:doctor_hunt/features/shared/custom_text_field.dart';
+import 'package:doctor_hunt/features/home/presentation/widgets/live_doctor_builder.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -21,28 +19,7 @@ class _HomeViewState extends State<HomeView> {
         physics: ClampingScrollPhysics(),
         slivers: [
           CustomAppBer(),
-          SliverToBoxAdapter(
-            child: Container(height: 100, color: Colors.white),
-          ),
-          SliverToBoxAdapter(child: Container(height: 100, color: Colors.red)),
-          SliverToBoxAdapter(
-            child: Container(height: 100, color: Colors.black),
-          ),
-          SliverToBoxAdapter(
-            child: Container(height: 100, color: Colors.green),
-          ),
-          SliverToBoxAdapter(
-            child: Container(height: 100, color: Colors.amber),
-          ),
-          SliverToBoxAdapter(child: Container(height: 100, color: Colors.blue)),
-          SliverToBoxAdapter(
-            child: Container(height: 100, color: Colors.green),
-          ),
-          SliverToBoxAdapter(child: Container(height: 100, color: Colors.blue)),
-          SliverToBoxAdapter(child: Container(height: 100, color: Colors.blue)),
-          SliverToBoxAdapter(child: Container(height: 100, color: Colors.blue)),
-          SliverToBoxAdapter(child: Container(height: 100, color: Colors.blue)),
-          SliverToBoxAdapter(child: Container(height: 100, color: Colors.blue)),
+          SliverToBoxAdapter(child: LiveDoctorBuilder()),
         ],
       ),
     );

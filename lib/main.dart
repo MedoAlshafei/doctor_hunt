@@ -1,6 +1,6 @@
-import 'package:doctor_hunt/splash_view.dart';
+import 'package:doctor_hunt/features/shared/custom_theme.dart';
+import 'package:doctor_hunt/root.dart';
 import 'package:flutter/material.dart';
-import 'features/shared/custom_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Doctor Hunt',
-      theme: CustomTheme.lightTheme,
-      // darkTheme: CustomTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: const SplashView(),
+      // themeMode: ThemeMode.light,
+      theme: CustomTheme.lightTheme,
+      home: Root(),
     );
   }
 }

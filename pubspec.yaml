@@ -24,6 +24,7 @@ flutter:
 
   assets:
     - assets/
+    - assets/live_doctors/
     - assets/prison_picture/
     - assets/splash_view/
     - assets/onboarding/
