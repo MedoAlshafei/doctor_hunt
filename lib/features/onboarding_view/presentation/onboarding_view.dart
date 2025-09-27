@@ -1,10 +1,10 @@
 import 'package:doctor_hunt/core/constants/app_colors.dart';
 import 'package:doctor_hunt/core/constants/app_text.dart';
-import 'package:doctor_hunt/features/home/presentation/home_view.dart';
-import 'package:doctor_hunt/features/onboarding/model/onboarding_model.dart';
-import 'package:doctor_hunt/features/onboarding/presentation/custom_page_view_builder.dart';
+import 'package:doctor_hunt/features/onboarding_view/model/onboarding_model.dart';
+import 'package:doctor_hunt/features/onboarding_view/presentation/custom_page_view_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:go_router/go_router.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
@@ -15,6 +15,7 @@ class OnboardingView extends StatefulWidget {
 
 class _OnboardingViewState extends State<OnboardingView> {
   final PageController _pageController = PageController(initialPage: 0);
+  int _currentPage = 0;
 
   @override
   void dispose() {
@@ -31,6 +32,11 @@ class _OnboardingViewState extends State<OnboardingView> {
             child: PageView.builder(
               controller: _pageController,
               itemCount: onBoardingList.length,
+              onPageChanged: (index) {
+                setState(() {
+                  _currentPage = index;
+                });
+              },
               itemBuilder: (context, index) {
                 return CustomPageViewBuilder(
                   image: onBoardingList[index].image,
@@ -48,15 +54,11 @@ class _OnboardingViewState extends State<OnboardingView> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    if (_pageController.page == 2) {
-                      Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(builder: (context) => HomeView()),
-                        (route) => false,
-                      );
+                    if (_currentPage == 2) {
+                      context.goNamed('/home');
                     } else {
                       _pageController.nextPage(
-                        duration: Duration(milliseconds: 300),
+                        duration: const Duration(milliseconds: 300),
                         curve: Curves.easeIn,
                       );
                     }
@@ -70,12 +72,14 @@ class _OnboardingViewState extends State<OnboardingView> {
                 const SizedBox(height: 8),
                 TextButton(
                   onPressed: () {
-                    if (_pageController.page != 2) {
+                    if (_currentPage != 2) {
                       _pageController.animateToPage(
                         2,
                         duration: const Duration(milliseconds: 400),
                         curve: Curves.easeIn,
                       );
+                    } else {
+                      context.go('/home');
                     }
                   },
                   child: Text(

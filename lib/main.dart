@@ -1,5 +1,5 @@
+import 'package:doctor_hunt/core/routes/route_generation_config.dart';
 import 'package:doctor_hunt/features/shared/custom_theme.dart';
-import 'package:doctor_hunt/root.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,13 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Doctor Hunt',
       themeMode: ThemeMode.system,
-      // themeMode: ThemeMode.light,
       theme: CustomTheme.lightTheme,
-      home: Root(),
+      routerConfig: RouteGeneratorConfig.goRouter,
     );
   }
 }
