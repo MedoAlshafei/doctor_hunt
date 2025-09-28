@@ -3,6 +3,7 @@ class AppImage {
   static String profileImage = "assets/prison_picture/profile_image.png";
   //
   //  Streaming Container image
+  static String liveIcon = "assets/streaming/live_stream.png";
   static String doctorOneImage = 'assets/live_doctors/doctor_one.png';
   static String doctorTwoImage = 'assets/live_doctors/doctor_two.png';
   static String doctorThreeImage = 'assets/live_doctors/doctor_three.png';

@@ -1,3 +1,4 @@
+import 'package:doctor_hunt/core/constants/app_image.dart';
 import 'package:doctor_hunt/core/constants/app_text.dart';
 import 'package:doctor_hunt/features/live_stream_view/model/live_stream_model.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class LiveStreamBuilder extends StatelessWidget {
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      padding: const EdgeInsets.all(8),
+      // padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -35,12 +36,24 @@ class LiveStreamBuilder extends StatelessWidget {
                   width: width * 0.32,
                   height: height * 0.3,
                   decoration: BoxDecoration(
-                    // color: Colors.grey[400],
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Image.asset(
-                    liveStreamList[index].image,
-                    fit: BoxFit.fill,
+                  child: Stack(
+                    children: [
+                      Image.asset(
+                        liveStreamList[index].image,
+                        fit: BoxFit.cover,
+                      ),
+                      // Positioned(
+                      //   top: 20,
+                      //   right: 15,
+                      //   child: Image.asset(
+                      //     AppImage.liveIcon,
+                      //     fit: BoxFit.cover,
+                      //     height: 20,
+                      //   ),
+                      // ),
+                    ],
                   ),
                 );
               },

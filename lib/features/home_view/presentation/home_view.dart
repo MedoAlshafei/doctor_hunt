@@ -1,5 +1,4 @@
 import 'package:doctor_hunt/core/constants/app_colors.dart';
-import 'package:doctor_hunt/core/constants/app_image.dart';
 import 'package:doctor_hunt/core/routes/app_router.dart';
 import 'package:doctor_hunt/features/home_view/presentation/widgets/custom_app_bar.dart';
 import 'package:doctor_hunt/features/live_stream_view/presentation/live_stream_builder.dart';
