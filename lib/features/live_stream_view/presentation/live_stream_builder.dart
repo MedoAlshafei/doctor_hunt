@@ -1,4 +1,3 @@
-import 'package:doctor_hunt/core/constants/app_image.dart';
 import 'package:doctor_hunt/core/constants/app_text.dart';
 import 'package:doctor_hunt/features/live_stream_view/model/live_stream_model.dart';
 import 'package:flutter/material.dart';

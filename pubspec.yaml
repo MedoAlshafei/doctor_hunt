@@ -12,8 +12,9 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
-  google_fonts: ^6.3.2
+  flutter_svg: ^2.2.1
   go_router: ^14.6.2
+  google_fonts: ^6.3.2
 
 dev_dependencies:
   flutter_lints: ^5.0.0
@@ -25,6 +26,7 @@ flutter:
 
   assets:
     - assets/
+    - assets/app_icons/
     - assets/streaming/
     - assets/aouth_icon/
     - assets/live_doctors/
