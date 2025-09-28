@@ -57,16 +57,15 @@ class CustomTheme {
         textStyle: const TextStyle(fontWeight: FontWeight.w600),
       ),
     ),
-    chipTheme: const ChipThemeData(
-      color: WidgetStatePropertyAll(Color(0xFFEFF7F4)),
-      labelStyle: TextStyle(
-        color: Color(0xFF0EBE7F),
-        fontWeight: FontWeight.w600,
-      ),
-      side: BorderSide.none,
-      shape: StadiumBorder(),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: Colors.white,
+      selectedItemColor: const Color(0xFF0EBE7F),
+      unselectedItemColor: const Color(0xFFDFE2E6),
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      elevation: 0,
+      type: BottomNavigationBarType.shifting,
     ),
-    dividerTheme: const DividerThemeData(color: Color(0xFFDFE2E6)),
   );
 
   // Dark Theme
