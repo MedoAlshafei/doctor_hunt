@@ -14,8 +14,8 @@ class LiveStreamBuilder extends StatelessWidget {
     final width = size.width;
 
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      // padding: const EdgeInsets.all(16),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+      padding: const EdgeInsets.all(8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -24,9 +24,9 @@ class LiveStreamBuilder extends StatelessWidget {
             AppText.liveDoctors,
             style: GoogleFonts.rubik(fontSize: 18, fontWeight: FontWeight.w500),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 4),
           SizedBox(
-            height: height * 0.2,
+            height: height * 0.23,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: liveStreamList.length,
@@ -38,22 +38,9 @@ class LiveStreamBuilder extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Stack(
-                    children: [
-                      Image.asset(
-                        liveStreamList[index].image,
-                        fit: BoxFit.cover,
-                      ),
-                      // Positioned(
-                      //   top: 20,
-                      //   right: 15,
-                      //   child: Image.asset(
-                      //     AppImage.liveIcon,
-                      //     fit: BoxFit.cover,
-                      //     height: 20,
-                      //   ),
-                      // ),
-                    ],
+                  child: Image.asset(
+                    liveStreamList[index].image,
+                    fit: BoxFit.cover,
                   ),
                 );
               },
