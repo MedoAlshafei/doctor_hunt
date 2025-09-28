@@ -1,10 +1,9 @@
-
+import 'package:doctor_hunt/features/auth/sign_up_view/presentation/sign_up_view.dart';
 import 'package:doctor_hunt/features/find_doctor_view/presentation/find_doctor_view.dart';
 import 'package:doctor_hunt/features/home_view/presentation/home_view.dart';
 import 'package:doctor_hunt/features/live_stream_view/presentation/live_stream_view.dart';
 import 'package:doctor_hunt/features/onboarding_view/presentation/onboarding_view.dart';
-import 'package:doctor_hunt/features/sign_in_view/presentation/sign_in_view.dart';
-import 'package:doctor_hunt/features/sign_up_view/presentation/sign_up_view.dart';
+import 'package:doctor_hunt/features/auth/sign_in_view/presentation/sign_in_view.dart';
 import 'package:doctor_hunt/splash_view.dart';
 import 'package:go_router/go_router.dart';
 import 'app_router.dart';
@@ -31,7 +30,7 @@ class RouteGeneratorConfig {
       GoRoute(
         path: AppRouter.kSignUpView,
         name: AppRouter.kSignUpView,
-        builder: (context, state) => const SignUpScreen(),
+        builder: (context, state) => const SignUpView(),
       ),
       GoRoute(
         path: AppRouter.kHomeView,

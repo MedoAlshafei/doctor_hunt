@@ -25,6 +25,7 @@ flutter:
 
   assets:
     - assets/
+    - assets/aouth_icon/
     - assets/live_doctors/
     - assets/prison_picture/
     - assets/splash_view/

@@ -1,5 +1,6 @@
 import 'package:doctor_hunt/core/constants/app_colors.dart';
 import 'package:doctor_hunt/core/constants/app_text.dart';
+import 'package:doctor_hunt/core/routes/app_router.dart';
 import 'package:doctor_hunt/features/onboarding_view/model/onboarding_model.dart';
 import 'package:doctor_hunt/features/onboarding_view/presentation/custom_page_view_builder.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +56,9 @@ class _OnboardingViewState extends State<OnboardingView> {
                 ElevatedButton(
                   onPressed: () {
                     if (_currentPage == 2) {
-                      context.goNamed('/home');
+                      GoRouter.of(
+                        context,
+                      ).pushReplacementNamed(AppRouter.kSignInView);
                     } else {
                       _pageController.nextPage(
                         duration: const Duration(milliseconds: 300),
@@ -79,7 +82,9 @@ class _OnboardingViewState extends State<OnboardingView> {
                         curve: Curves.easeIn,
                       );
                     } else {
-                      context.go('/home');
+                      GoRouter.of(
+                        context,
+                      ).pushReplacementNamed(AppRouter.kSignInView);
                     }
                   },
                   child: Text(
