@@ -6,7 +6,7 @@ import 'package:doctor_hunt/features/shared/custom_elevated_button.dart';
 import 'package:doctor_hunt/features/shared/custom_text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:go_router/go_router.dart';
+// import 'package:go_router/go_router.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -89,8 +89,11 @@ class SignInScreen extends StatelessWidget {
                     width: 300,
                     height: 55,
                     onPressed: () {
-                      // Navigate to home after successful login using GoRouter
-                      GoRouter.of(context).go(AppRouter.kHomeView);
+                      // Navigate to home after successful login using native navigation
+                      Navigator.pushReplacementNamed(
+                        context,
+                        AppRouter.kHomeView,
+                      );
                     },
                   ),
                   SizedBox(height: height * 0.03),
@@ -98,16 +101,16 @@ class SignInScreen extends StatelessWidget {
                     text: "Forgot password",
                     color: AppColors.primary,
                     onPressed: () {
-                      GoRouter.of(context).go(AppRouter.kSignUpView);
+                      Navigator.pushNamed(context, AppRouter.kSignUpView);
                     },
                   ),
-                  SizedBox(height: MediaQuery.sizeOf(context).height * 0.2),
+                  SizedBox(height: MediaQuery.sizeOf(context).height / 25),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 60),
                     child: CustomTextButtom(
                       text: "Don’t have an account? Join us",
                       onPressed: () {
-                        GoRouter.of(context).go(AppRouter.kSignUpView);
+                        Navigator.pushNamed(context, AppRouter.kSignUpView);
                       },
                       color: AppColors.primary,
                     ),

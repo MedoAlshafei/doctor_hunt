@@ -1,11 +1,11 @@
 import 'package:doctor_hunt/core/constants/app_colors.dart';
 import 'package:doctor_hunt/core/constants/app_text.dart';
-import 'package:doctor_hunt/core/routes/app_router.dart';
+import 'package:doctor_hunt/features/home_view/presentation/home_view.dart';
 import 'package:doctor_hunt/features/onboarding_view/model/onboarding_model.dart';
 import 'package:doctor_hunt/features/onboarding_view/presentation/custom_page_view_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:go_router/go_router.dart';
+// import 'package:go_router/go_router.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
@@ -56,9 +56,13 @@ class _OnboardingViewState extends State<OnboardingView> {
                 ElevatedButton(
                   onPressed: () {
                     if (_currentPage == 2) {
-                      GoRouter.of(
+                      Navigator.pushAndRemoveUntil(
                         context,
-                      ).pushReplacementNamed(AppRouter.kSignInView);
+                        MaterialPageRoute(
+                          builder: (context) => const HomeView(),
+                        ),
+                        (route) => false,
+                      );
                     } else {
                       _pageController.nextPage(
                         duration: const Duration(milliseconds: 300),
@@ -82,9 +86,13 @@ class _OnboardingViewState extends State<OnboardingView> {
                         curve: Curves.easeIn,
                       );
                     } else {
-                      GoRouter.of(
+                      Navigator.pushAndRemoveUntil(
                         context,
-                      ).pushReplacementNamed(AppRouter.kSignInView);
+                        MaterialPageRoute(
+                          builder: (context) => const HomeView(),
+                        ),
+                        (route) => false,
+                      );
                     }
                   },
                   child: Text(

@@ -11,12 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Doctor Hunt',
       themeMode: ThemeMode.system,
       theme: CustomTheme.lightTheme,
-      routerConfig: RouteGeneratorConfig.goRouter,
+      initialRoute: '/',
+      onGenerateRoute: RouteGeneratorConfig.generator,
     );
   }
 }
