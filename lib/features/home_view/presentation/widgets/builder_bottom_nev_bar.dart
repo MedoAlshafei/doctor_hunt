@@ -1,5 +1,4 @@
 import 'package:doctor_hunt/core/constants/app_colors.dart';
-import 'package:doctor_hunt/core/routes/app_router.dart';
 import 'package:doctor_hunt/features/home_view/model/navigation_bar_model.dart';
 import 'package:flutter/material.dart';
 // import 'package:go_router/go_router.dart';
@@ -10,19 +9,11 @@ class BuilderBottomNevBar extends StatelessWidget {
   final List<NavBarModel> navItems;
 
   const BuilderBottomNevBar({
-<<<<<<< HEAD
     super.key,
     required this.selectedIndex,
     required this.onItemSelected,
     required this.navItems,
   });
-=======
-    Key? key,
-    required this.selectedIndex,
-    required this.onItemSelected,
-    required this.navItems,
-  }) : super(key: key);
->>>>>>> b233a097ec6383e1b89b5a3678d6b58d7935a88b
 
   @override
   Widget build(BuildContext context) {
