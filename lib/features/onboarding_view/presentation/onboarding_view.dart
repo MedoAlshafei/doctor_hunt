@@ -1,5 +1,9 @@
 import 'package:doctor_hunt/core/constants/app_colors.dart';
 import 'package:doctor_hunt/core/constants/app_text.dart';
+<<<<<<< HEAD
+=======
+import 'package:doctor_hunt/core/routes/app_router.dart';
+>>>>>>> b233a097ec6383e1b89b5a3678d6b58d7935a88b
 import 'package:doctor_hunt/features/home_view/presentation/home_view.dart';
 import 'package:doctor_hunt/features/onboarding_view/model/onboarding_model.dart';
 import 'package:doctor_hunt/features/onboarding_view/presentation/custom_page_view_builder.dart';

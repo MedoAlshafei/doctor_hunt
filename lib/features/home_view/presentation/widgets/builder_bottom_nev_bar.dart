@@ -10,11 +10,19 @@ class BuilderBottomNevBar extends StatelessWidget {
   final List<NavBarModel> navItems;
 
   const BuilderBottomNevBar({
+<<<<<<< HEAD
     super.key,
     required this.selectedIndex,
     required this.onItemSelected,
     required this.navItems,
   });
+=======
+    Key? key,
+    required this.selectedIndex,
+    required this.onItemSelected,
+    required this.navItems,
+  }) : super(key: key);
+>>>>>>> b233a097ec6383e1b89b5a3678d6b58d7935a88b
 
   @override
   Widget build(BuildContext context) {
