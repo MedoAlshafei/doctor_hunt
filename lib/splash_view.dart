@@ -1,7 +1,7 @@
 import 'package:doctor_hunt/core/constants/app_image.dart';
 import 'package:doctor_hunt/core/routes/app_router.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+// import 'package:go_router/go_router.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -20,7 +20,7 @@ class _SplashViewState extends State<SplashView> {
   Future<void> _navigateToOnboarding() async {
     await Future.delayed(const Duration(seconds: 2));
     if (mounted) {
-      context.go(AppRouter.kOnboardingView);
+      Navigator.pushReplacementNamed(context, AppRouter.kOnboardingView);
     }
   }
 

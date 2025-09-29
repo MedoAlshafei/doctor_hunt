@@ -1,17 +1,20 @@
 import 'package:doctor_hunt/core/constants/app_colors.dart';
 import 'package:doctor_hunt/core/routes/app_router.dart';
+import 'package:doctor_hunt/features/home_view/model/navigation_bar_model.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+// import 'package:go_router/go_router.dart';
 
-class BuilderBottomNevBar extends StatefulWidget {
-  const BuilderBottomNevBar({super.key});
+class BuilderBottomNevBar extends StatelessWidget {
+  final int selectedIndex;
+  final ValueChanged<int> onItemSelected;
+  final List<NavBarModel> navItems;
 
-  @override
-  State<BuilderBottomNevBar> createState() => _BuilderBottomNevBarState();
-}
-
-class _BuilderBottomNevBarState extends State<BuilderBottomNevBar> {
-  int _selectedIndex = 0;
+  const BuilderBottomNevBar({
+    Key? key,
+    required this.selectedIndex,
+    required this.onItemSelected,
+    required this.navItems,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,70 +29,41 @@ class _BuilderBottomNevBarState extends State<BuilderBottomNevBar> {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
+            color: Colors.grey.withAlpha(100),
             spreadRadius: 0,
             blurRadius: 10,
-            offset: const Offset(0, -2),
+            offset: const Offset(0, -3),
           ),
         ],
       ),
-      child: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
-        selectedItemColor: AppColors.primary,
-        unselectedItemColor: AppColors.grey,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        iconSize: 30,
-        elevation: 0,
-        currentIndex: _selectedIndex,
-        items: [
-          BottomNavigationBarItem(
-            icon: Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: List.generate(
+          navItems.length,
+          (index) => InkWell(
+            onTap: () => onItemSelected(index),
+            borderRadius: BorderRadius.circular(25),
+            child: Container(
+              width: 50,
+              height: 50,
               decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: AppColors.primary,
+                color: selectedIndex == index
+                    ? AppColors.primary
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(25),
               ),
-              child: Icon(Icons.home_outlined),
+              child: Center(
+                child: Icon(
+                  navItems[index].icon,
+                  size: 24,
+                  color: selectedIndex == index
+                      ? navItems[index].selectedIconColor
+                      : navItems[index].color,
+                ),
+              ),
             ),
-            activeIcon: Icon(Icons.home),
-            label: '',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_outline),
-            activeIcon: Icon(Icons.favorite),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat_outlined),
-            activeIcon: Icon(Icons.chat),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book_outlined),
-            activeIcon: Icon(Icons.book),
-            label: '',
-          ),
-        ],
-        onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-          switch (index) {
-            case 0:
-              GoRouter.of(context).go(AppRouter.kHomeView);
-              break;
-            case 1:
-              GoRouter.of(context).go(AppRouter.kfavoriteScreen);
-              break;
-            case 2:
-              GoRouter.of(context).go(AppRouter.kchatScreen);
-              break;
-            case 3:
-              GoRouter.of(context).go(AppRouter.kbookScreen);
-              break;
-          }
-        },
+        ),
       ),
     );
   }

@@ -5,7 +5,7 @@ import 'package:doctor_hunt/features/auth/shared/login_text_filed.dart';
 import 'package:doctor_hunt/features/shared/custom_elevated_button.dart';
 import 'package:doctor_hunt/features/shared/custom_text_button.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+// import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignUpView extends StatelessWidget {
@@ -97,7 +97,10 @@ class SignUpView extends StatelessWidget {
                     width: 300,
                     height: 55,
                     onPressed: () {
-                      GoRouter.of(context).go(AppRouter.kHomeView);
+                      Navigator.pushReplacementNamed(
+                        context,
+                        AppRouter.kHomeView,
+                      );
                     },
                   ),
                   SizedBox(height: height * 0.03),
@@ -105,7 +108,7 @@ class SignUpView extends StatelessWidget {
                     text: "Have an account? Log in",
                     color: AppColors.primary,
                     onPressed: () {
-                      GoRouter.of(context).go(AppRouter.kSignInView);
+                      Navigator.pushNamed(context, AppRouter.kSignInView);
                     },
                   ),
                 ],

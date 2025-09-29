@@ -5,48 +5,34 @@ import 'package:doctor_hunt/features/live_stream_view/presentation/live_stream_v
 import 'package:doctor_hunt/features/onboarding_view/presentation/onboarding_view.dart';
 import 'package:doctor_hunt/features/auth/sign_in_view/presentation/sign_in_view.dart';
 import 'package:doctor_hunt/splash_view.dart';
-import 'package:go_router/go_router.dart';
 import 'app_router.dart';
+import 'package:flutter/material.dart';
 
 class RouteGeneratorConfig {
-  static GoRouter goRouter = GoRouter(
-    initialLocation: AppRouter.kSplashView,
-    routes: [
-      GoRoute(
-        path: AppRouter.kSplashView,
-        name: AppRouter.kSplashView,
-        builder: (context, state) => const SplashView(),
-      ),
-      GoRoute(
-        path: AppRouter.kOnboardingView,
-        name: AppRouter.kOnboardingView,
-        builder: (context, state) => const OnboardingView(),
-      ),
-      GoRoute(
-        path: AppRouter.kSignInView,
-        name: AppRouter.kSignInView,
-        builder: (context, state) => const SignInScreen(),
-      ),
-      GoRoute(
-        path: AppRouter.kSignUpView,
-        name: AppRouter.kSignUpView,
-        builder: (context, state) => const SignUpView(),
-      ),
-      GoRoute(
-        path: AppRouter.kHomeView,
-        name: AppRouter.kHomeView,
-        builder: (context, state) => const HomeView(),
-      ),
-      GoRoute(
-        path: AppRouter.kDoctorLiveStreamView,
-        name: AppRouter.kDoctorLiveStreamView,
-        builder: (context, state) => const DoctorLiveScreen(),
-      ),
-      GoRoute(
-        path: AppRouter.kFindDoctorView,
-        name: AppRouter.kFindDoctorView,
-        builder: (context, state) => const FindDoctorsScreen(),
-      ),
-    ],
-  );
+  static Route<dynamic>? generator(RouteSettings settings) {
+    switch (settings.name) {
+      case AppRouter.kSplashView:
+        return MaterialPageRoute(builder: (_) => const SplashView());
+      case AppRouter.kOnboardingView:
+        return MaterialPageRoute(builder: (_) => const OnboardingView());
+      case AppRouter.kSignInView:
+        return MaterialPageRoute(builder: (_) => const SignInScreen());
+      case AppRouter.kSignUpView:
+        return MaterialPageRoute(builder: (_) => const SignUpView());
+      case AppRouter.kHomeView:
+        return MaterialPageRoute(builder: (_) => const HomeView());
+      case AppRouter.kDoctorLiveStreamView:
+        return MaterialPageRoute(builder: (_) => const DoctorLiveScreen());
+      case AppRouter.kFindDoctorView:
+        return MaterialPageRoute(builder: (_) => const FindDoctorsScreen());
+      // Add more cases as needed
+      default:
+        return MaterialPageRoute(
+          builder: (_) => Scaffold(
+            appBar: AppBar(title: Text('No route defined')),
+            body: Center(child: Text('No route defined')),
+          ),
+        );
+    }
+  }
 }
